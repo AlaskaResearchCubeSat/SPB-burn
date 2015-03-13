@@ -7,21 +7,7 @@
 #include <math.h>
 #include <commandlib.h>
 #include "terminal.h"
-
-
-void burn_on(void){
-    //turn on LED
-    P7OUT|=BIT4;
-    //turn on resistor
-    P6OUT|=BIT7;
-}
-
-void burn_off(void){
-    //turn off resistor
-    P6OUT&=~BIT7;
-    //turn off LED
-    P7OUT&=~BIT4;
-}
+#include "burn.h"
 
 
 int burnCmd(char **argv,unsigned short argc){

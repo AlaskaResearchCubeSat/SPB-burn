@@ -6,6 +6,7 @@
 #include <UCA1_uart.h>
 #include <terminal.h>
 #include "timer.h"
+#include "burn.h"
 
 
 //make printf send over UCA1
@@ -74,12 +75,7 @@ void main(void){
   P7OUT=0x80;
   P7DIR=0xFF;
 
-  
-  //setup burn pin
-  P6OUT&=~BIT7;
-  P6SEL&=~BIT7;
-  P6REN&=~BIT7;
-  P6DIR|= BIT7;
+  burn_init();
 
   //set unused pins as inputs
   P6REN&=~BIT6;
