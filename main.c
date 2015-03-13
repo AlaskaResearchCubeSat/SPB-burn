@@ -4,7 +4,6 @@
 #include <ctype.h>
 #include <ctl.h>
 #include <UCA1_uart.h>
-#include <i2c.h>
 #include <terminal.h>
 #include "timer.h"
 
@@ -75,10 +74,6 @@ void main(void){
   P7OUT=0x80;
   P7DIR=0xFF;
 
-  // set the self test pin and SR pin to out put
-  P8SEL&=~(BIT1);
-  P8DIR|=BIT1;
-  P8OUT&=~BIT1;
   
   //setup burn pin
   P6OUT&=~BIT7;
@@ -91,9 +86,6 @@ void main(void){
   P6DIR&=~BIT6;
   P8REN&=~BIT0;
   P8DIR&=~BIT0;
-
-  //setup UCB1 for I2C
-  initI2C();
 
   //initialize tasking
   ctl_task_init(&idle_task, 255, "idle");  
