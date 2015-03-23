@@ -4,23 +4,25 @@
 
 
 void burn_init(void){
-  //setup burn pin
-  P6OUT&=~BIT7;
-  P6SEL&=~BIT7;
-  P6REN&=~BIT7;
-  P6DIR|= BIT7;
+  //setup burn pins
+  P8OUT&=~BURN_PINS_ALL;
+  P8SEL&=~BURN_PINS_ALL;
+  P8REN&=~BURN_PINS_ALL;
+  P8DIR|= BURN_PINS_ALL;
+  //turn off LEDs
+  P7OUT&=~(BURN_PINS_ALL<<BURN_LED_SHIFT);
 }
 
-void burn_on(void){
-    //turn on LED
-    P7OUT|=BIT4;
-    //turn on resistor
-    P6OUT|=BIT7;
+void burn_on(unsigned char burn){
+    //turn on LEDs
+    P7OUT|=burn<<BURN_LED_SHIFT;
+    //turn on resistors
+    P6OUT|=burn;
 }
 
 void burn_off(void){
     //turn off resistor
-    P6OUT&=~BIT7;
-    //turn off LED
-    P7OUT&=~BIT4;
+    P6OUT&=~BURN_PINS_ALL;
+    //turn off LEDs
+    P7OUT&=~(BURN_PINS_ALL<<BURN_LED_SHIFT);
 }

@@ -14,6 +14,7 @@ int burnCmd(char **argv,unsigned short argc){
     float burn_time=1,wait_time=0;
     unsigned long burn_delay,wait_delay;
     char *end;
+    unsigned char burn_pins=BURN_PIN_0;
     if(argc!=0){
         if(argc>2){
             printf("Error : too many arguments\r\n");
@@ -66,7 +67,7 @@ int burnCmd(char **argv,unsigned short argc){
     //print out delay time
     printf("Activating burn circuit for %.1f secconds\r\n",burn_time);
     //turn on resistor
-    burn_on();
+    burn_on(burn_pins);
     //delay for specified time
     ctl_timeout_wait(ctl_get_current_time()+burn_delay);
     //turn off resistor
