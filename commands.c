@@ -14,7 +14,7 @@ int burnCmd(char **argv,unsigned short argc){
     float burn_time=10,wait_time=0;
     unsigned long burn_delay,wait_delay;
     char *end;
-    unsigned char burn_pins=BURN_PIN_0;
+    unsigned char burn_pins=BURN_PINS_ALL;
     if(argc!=0){
         if(argc>2){
             printf("Error : too many arguments\r\n");
