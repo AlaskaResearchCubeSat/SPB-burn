@@ -11,7 +11,7 @@
 
 
 int burnCmd(char **argv,unsigned short argc){
-    float burn_time=1,wait_time=0;
+    float burn_time=10,wait_time=0;
     unsigned long burn_delay,wait_delay;
     char *end;
     unsigned char burn_pins=BURN_PIN_0;
