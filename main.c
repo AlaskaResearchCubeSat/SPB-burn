@@ -75,7 +75,7 @@ void main(void){
   UCA1_BR57600();
 
   // Set up Port 7 for LED
-  P7OUT=0x80;
+  P7OUT=0x01;
   P7DIR=0xFF;
 
   burn_init();
