@@ -17,12 +17,12 @@ void burn_on(unsigned char burn){
     //turn on LEDs
     P7OUT|=burn<<BURN_LED_SHIFT;
     //turn on resistors
-    P6OUT|=burn;
+    P8OUT|=burn;
 }
 
 void burn_off(void){
     //turn off resistor
-    P6OUT&=~BURN_PINS_ALL;
+    P8OUT&=~BURN_PINS_ALL;
     //turn off LEDs
     P7OUT&=~(BURN_PINS_ALL<<BURN_LED_SHIFT);
 }
