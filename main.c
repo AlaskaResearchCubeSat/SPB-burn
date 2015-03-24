@@ -71,6 +71,9 @@ void main(void){
   //setup UCA1 UART
   UCA1_init_UART();
 
+  //set baud rate
+  UCA1_BR57600();
+
   // Set up Port 7 for LED
   P7OUT=0x80;
   P7DIR=0xFF;
