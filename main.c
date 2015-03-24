@@ -80,12 +80,6 @@ void main(void){
 
   burn_init();
 
-  //set unused pins as inputs
-  P6REN&=~BIT6;
-  P6DIR&=~BIT6;
-  P8REN&=~BIT0;
-  P8DIR&=~BIT0;
-
   //initialize tasking
   ctl_task_init(&idle_task, 255, "idle");  
 
