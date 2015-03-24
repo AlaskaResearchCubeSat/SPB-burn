@@ -81,6 +81,6 @@ int burnCmd(char **argv,unsigned short argc){
 //table of commands with help
 const CMD_SPEC cmd_tbl[]={{"help"," [command]\r\n\t""get a list of commands or help on a spesific command.",helpCmd},
                          CTL_COMMANDS,
-                         {"burn","[time [delay]]""\r\n\t""trigger the burn circuit to deploy the antenna for [time] in secconds",burnCmd},
+                         {"burn","[time [delay]]""\r\n\t""trigger the burn circuit to deploy the antenna for [time] in secconds after waiting for a delay of [delay] secconds",burnCmd},
                          //end of list
                          {NULL,NULL,NULL}};
